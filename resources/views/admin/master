@@ -1,0 +1,46 @@
+/* ===============================
+| MIGRASI: database/migrations/xxxx_xx_xx_create_portfolios_table.php
+=============================== */
+
+
+/* ===============================
+| MODEL: app/Models/Portfolio.php
+=============================== */
+
+
+/* ===============================
+| CONTROLLER: app/Http/Controllers/PortfolioController.php
+=============================== */
+
+
+/* ===============================
+| ROUTING: routes/web.php
+=============================== */
+
+
+/* ===============================
+| VIEW: resources/views/admin/portofolio.blade.php
+=============================== */
+
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Manajemen Portofolio</title>
+</head>
+
+<body>
+  <div class="container py-4">
+    <h2>Manajemen Portofolio</h2>
+
+    <div class="row">
+      
+    </div>
+  </div>
+
+  
+</body>
+
+</html>

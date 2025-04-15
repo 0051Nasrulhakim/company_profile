@@ -1,0 +1,106 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background-color: #1a1a2e;
+  color: #ffffff;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 50px;
+  background-color: #16213e;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+}
+
+nav .logo {
+  font-size: 24px;
+  font-weight: 600;
+  color: #f4c531;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+}
+
+nav ul li {
+  margin: 0 15px;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #ffffff;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+nav ul li a:hover {
+  color: #f4c531;
+}
+
+section {
+  padding: 100px 50px;
+}
+
+section h2 {
+  color: #f4c531;
+  margin-bottom: 20px;
+}
+
+section p {
+  margin-bottom: 20px;
+}
+
+.btn {
+  background-color: #f4c531;
+  padding: 10px 20px;
+  color: #16213e;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.btn:hover {
+  background-color: #d4a217;
+}
+
+.portfolio-actions,
+.services-actions,
+.blog-actions {
+  margin-top: 20px;
+}
+
+.portfolio-list,
+.services-list,
+.blog-list,
+.messages-list {
+  margin-top: 20px;
+}
+
+.portfolio-item,
+.service-item,
+.blog-item,
+.message-item {
+  background-color: #0f3460;
+  padding: 15px;
+  margin-bottom: 20px;
+  border-radius: 5px;
+}
+
+.portfolio-item h3,
+.service-item h3,
+.blog-item h3 {
+  color: #f4c531;
+}
