@@ -33,6 +33,9 @@ Route::get('/admin', function () {
 
 use App\Http\Controllers\PortfolioController;
 use App\Http\Controllers\BlogController;
+use App\Http\Controllers\MessageController;
+
+Route::resource('message', MessageController::class)->only(['index', 'store', 'destroy']);
 
 Route::resource('blog', BlogController::class);
 Route::resource('portfolio', PortfolioController::class);

@@ -23,7 +23,7 @@
       <li><a href="{{ route('portfolio.index') }}">Manajemen Portofolio</a></li>
       <li><a href="{{ route('service.index') }}">Manajemen Layanan</a></li>
       <li><a href="{{ route('blog.index') }}">Manajemen Blog</a></li> <!-- Belum ada route -->
-      <li><a href="{{ url('/admin/pesan') }}">Pesan Masuk</a></li>
+      <li><a href="{{ route('message.index') }}">Pesan Masuk</a></li>
     </ul>
   </nav>
 

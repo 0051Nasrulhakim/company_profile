@@ -20,26 +20,39 @@
       <li><a href="{{ route('portfolio.index') }}">Manajemen Portofolio</a></li>
       <li><a href="{{ route('service.index') }}">Manajemen Layanan</a></li>
       <li><a href="{{ route('blog.index') }}">Manajemen Blog</a></li> <!-- Belum ada route -->
-      <li><a href="{{ url('/admin/pesan') }}">Pesan Masuk</a></li>
+      <li><a href="{{ route('message.index') }}">Pesan Masuk</a></li>
     </ul>
   </nav>
 
   <section class="section">
-    <h2>Pesan Masuk</h2>
-    <p>
-      Kelola pesan masuk yang dikirim oleh pengunjung melalui formulir kontak.
-    </p>
+  <h2>Pesan Masuk</h2>
+  <p>
+    Kelola pesan masuk yang dikirim oleh pengunjung melalui formulir kontak.
+  </p>
 
-    <div class="messages-list">
+  <div class="messages-list">
+    @forelse($messages as $message)
       <div class="message-item">
-        <p><strong>Nama Pengirim:</strong> John Doe</p>
-        <p><strong>Email:</strong> johndoe@example.com</p>
-        <p><strong>Pesan:</strong> Lorem ipsum dolor sit amet.</p>
-        <button class="btn">Balas</button>
-        <button class="btn">Hapus</button>
+        <p><strong>Nama Pengirim:</strong> {{ $message->name }}</p>
+        <p><strong>Email:</strong> {{ $message->email }}</p>
+        <p><strong>Pesan:</strong> {{ $message->message }}</p>
+
+        <!-- <form action="mailto:{{ $message->email }}" method="get" style="display: inline-block;">
+          <button class="btn" type="submit">Balas</button>
+        </form> -->
+
+        <form action="{{ route('message.destroy', $message->id) }}" method="POST" style="display: inline-block;">
+          @csrf
+          @method('DELETE')
+          <button class="btn" onclick="return confirm('Yakin ingin menghapus pesan ini?')">Hapus</button>
+        </form>
       </div>
-    </div>
-  </section>
+    @empty
+      <p>Tidak ada pesan masuk.</p>
+    @endforelse
+  </div>
+</section>
+
 </body>
 
 </html>

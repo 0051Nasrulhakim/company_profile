@@ -504,38 +504,44 @@
 
 
   <section id="contact" class="section">
-    <h2>Kontak Kami</h2>
-    <p>Hubungi kami untuk proyek kreatif Anda.</p>
-    <div class="contact-container">
-      <h2>Formulir Kontak</h2>
-      <form>
-        <label for="name">Nama</label>
-        <input
-          type="text"
-          id="name"
-          name="name"
-          placeholder="Masukkan Nama Anda"
-          required />
+  <h2>Kontak Kami</h2>
+  <p>Hubungi kami untuk proyek kreatif Anda.</p>
+  <div class="contact-container">
+    <h2>Formulir Kontak</h2>
+    <form action="{{ route('message.store') }}" method="POST">
+      @csrf
+      <label for="name">Nama</label>
+      <input
+        type="text"
+        id="name"
+        name="name"
+        placeholder="Masukkan Nama Anda"
+        required />
 
-        <label for="email">Email</label>
-        <input
-          type="email"
-          id="email"
-          name="email"
-          placeholder="Masukkan Email Anda"
-          required />
+      <label for="email">Email</label>
+      <input
+        type="email"
+        id="email"
+        name="email"
+        placeholder="Masukkan Email Anda"
+        required />
 
-        <label for="message">Pesan</label>
-        <textarea
-          id="message"
-          name="message"
-          placeholder="Tulis pesan Anda di sini..."
-          required></textarea>
+      <label for="message">Pesan</label>
+      <textarea
+        id="message"
+        name="message"
+        placeholder="Tulis pesan Anda di sini..."
+        required></textarea>
 
-        <button type="submit">Kirim Pesan</button>
-      </form>
-    </div>
-  </section>
+      <button type="submit">Kirim Pesan</button>
+    </form>
+
+    @if(session('success'))
+      <p style="color: green;">{{ session('success') }}</p>
+    @endif
+  </div>
+</section>
+
 
   <footer class="footer">
     <div class="footer-section">
